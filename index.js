@@ -10,7 +10,7 @@ app.use(express.static('user_profile_picture'))
 app.use(cookieParser()); 
 app.use(cors({
   origin: (origin, callback) => {
-      const allowedOrigins = ["https://cu-app-admin.vercel.app", "https://cu-app-peach.vercel.app"];
+      const allowedOrigins = ["https://cu-app-admin.vercel.app", "https://cu-app-giftshop.vercel.app"];
       if (allowedOrigins.includes(origin) || !origin) {
           callback(null, true);
       } else {
