@@ -4,11 +4,6 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const http = require('http').Server(app);
 
-app.get('/', (req, res) => {
-  res.write(`<h1>This is my serverless cu-app server running in: ${PORT}</h1>`);
-  res.end();
-});
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('user_profile_picture'))
@@ -26,6 +21,9 @@ app.use(cors({
     credentials: true,
     optionsSuccessStatus: 204
 }));
-
 require('./routes/routerManager')(app);
+app.get('/', (req, res) => {
+  res.write(`<h1>This is my serverless cu-app server running in: ${PORT}</h1>`);
+  res.end();
+});
 http.listen(process.env.PORT || 8000);
