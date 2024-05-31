@@ -22,8 +22,12 @@ app.use(cors({
   optionsSuccessStatus: 204
 }));
 
-require('./routes/routerManager')(app);
+app.get('/', (req, res) => {
+  res.write(`<h1>Socket IO Start on Port : ${PORT}</h1>`);
+  res.end();
+});
 
+require('./routes/routerManager')(app);
 app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT} `)
 })
