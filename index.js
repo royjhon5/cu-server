@@ -23,7 +23,7 @@ app.use(cors({
 }));
 
 app.get('/', (req, res) => {
-  res.write(`<h1>Socket IO Start on Port : ${PORT}</h1>`);
+  res.write(`<h1>This is my serverless cu-app server running in: ${PORT}</h1>`);
   res.end();
 });
 
